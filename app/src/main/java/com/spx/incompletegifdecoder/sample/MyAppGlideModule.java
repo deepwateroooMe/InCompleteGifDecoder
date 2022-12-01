@@ -1,8 +1,6 @@
 package com.spx.incompletegifdecoder.sample;
 
-
 import android.content.Context;
-import android.util.Log;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
@@ -33,7 +31,6 @@ public class MyAppGlideModule extends AppGlideModule {
         super.registerComponents(context, glide, registry);
 
         List<ImageHeaderParser> imageHeaderParsers = registry.getImageHeaderParsers();
-
         com.spx.gifdecoder.ByteBufferGifDecoder byteBufferGifDecoder =
                 new com.spx.gifdecoder.ByteBufferGifDecoder(context, imageHeaderParsers, glide.getBitmapPool(), glide.getArrayPool());
         registry.prepend(Registry.BUCKET_GIF, ByteBuffer.class, GifDrawable.class, byteBufferGifDecoder);
@@ -41,6 +38,5 @@ public class MyAppGlideModule extends AppGlideModule {
         registry.prepend(Registry.BUCKET_GIF,
                 InputStream.class,
                 GifDrawable.class,  new StreamGifDecoder(imageHeaderParsers, byteBufferGifDecoder, glide.getArrayPool()));
-
     }
 }
