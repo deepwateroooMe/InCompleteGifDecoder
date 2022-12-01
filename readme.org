@@ -1,5 +1,5 @@
 #+latex_class: cn-article
-#+title: Simple Library Integration and Tests for a Bigger project
+#+title: Simple Library Integration and Tests for a Bigger project 爱表哥,爱生活!!!
 #+author: deepwaterooo 
 
 * Integrated as a small project for testing
@@ -18,6 +18,7 @@
 @GlideModule
 public class MyAppGlideModule extends AppGlideModule {
     private static final String TAG = "MyAppGlideModule";
+
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
         super.applyOptions(context, builder);
@@ -36,6 +37,7 @@ public class MyAppGlideModule extends AppGlideModule {
     }
 }
 #+END_SRC
+
 * 示例GIF
 - http://pic.wenwen.soso.com/pqpic/wenwenpic/0/20171116143737-1895154083_gif_398_305_3740344/0 这个是源项目的测试.Gif
 - https://media1.giphy.com/media/jrsWNmPJnIFv0jrLZy/200_d.gif 自已找的一个小小的用来测试是否能够正常加载
