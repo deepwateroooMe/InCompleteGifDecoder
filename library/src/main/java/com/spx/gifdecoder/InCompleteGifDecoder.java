@@ -27,9 +27,6 @@ package com.spx.gifdecoder;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.bumptech.glide.gifdecoder.GifDecoder;
@@ -45,6 +42,10 @@ import static com.spx.gifdecoder.GifFrame.DISPOSAL_BACKGROUND;
 import static com.spx.gifdecoder.GifFrame.DISPOSAL_NONE;
 import static com.spx.gifdecoder.GifFrame.DISPOSAL_PREVIOUS;
 import static com.spx.gifdecoder.GifFrame.DISPOSAL_UNSPECIFIED;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * @author shaopengxiang
@@ -93,7 +94,8 @@ public class InCompleteGifDecoder implements GifDecoder {
      * Temporary buffer for block reading.
      * Reads 16k chunks from the native buffer for processing, to greatly reduce JNI overhead.
      */
-    @Nullable private byte[] workBuffer;
+    @Nullable
+    private byte[] workBuffer;
     private int workBufferSize = 0;
     private int workBufferPosition = 0;
 
